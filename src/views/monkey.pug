@@ -1,0 +1,20 @@
+html
+    head
+        style
+            include style.css
+    body
+        include header.pug
+        h4 Liste des singes :
+        -var name =""
+        -var enclosure =""
+        -var id =""
+        ul
+            li Nom Enclos ID
+            for monkey in Monkeys
+                - name = monkey.name
+                - enclosure = monkey.enclosure_name
+                - id = monkey.id
+                li #{name} #{enclosure} #{id}
+                    a.button(href="/Monkeys/updateM/"+id) Modifier
+                    a.button(href="/Monkeys/deleteM/"+id) Supprimer
+        include footer.pug

@@ -1,0 +1,18 @@
+html
+    head
+        style
+            include style.css
+    body
+        include header.pug
+        h4 Liste des enclos :
+        -var name =""
+        -var id =""
+        ul
+            li Nom ID
+            for enclosure in Enclosures
+                - name = enclosure.name
+                - id = enclosure.id
+                p #{name} #{id}
+                    a.button(href="/Enclosures/updateE/"+id) Modifier
+                    a.button(href="/Enclosures/deleteE/"+id) Supprimer
+        include footer.pug
